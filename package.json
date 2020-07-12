@@ -1,6 +1,38 @@
 {
-  "name": "errors",
+  "name": "@reiwa/errors",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/reiwa/errors",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib --extensions .ts",
+    "build:watch": "babel src --out-dir lib --extensions .ts -w"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "@typescript-eslint/typescript-estree": "^1.10.2",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.4.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "typescript": "^3.9.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "firebase-functions": "^3.7.0"
+  }
 }
